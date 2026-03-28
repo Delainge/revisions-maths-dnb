@@ -3,131 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Révisions Maths DNB 2026</title>
+<title>Révisions DNB 2026</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--navy:#1B2A4A;--blue:#2E5F8A;--steel:#6B7B8D;--light:#E8ECF0;--txt:#1A1A2E;--ok:#0077BB;--warn:#E69F00;--alert:#CC3311;--bg:#F4F6F9;--gold:#D4A017;--green:#0A8754;--white:#FFF}
-body{font-family:'Segoe UI',Tahoma,sans-serif;background:var(--bg);color:var(--txt);-webkit-tap-highlight-color:transparent}
-.ctn{max-width:540px;margin:0 auto;padding:20px 16px;min-height:100vh}
-button{font-family:inherit;cursor:pointer;-webkit-appearance:none}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.fade{animation:fadeIn .3s ease}
-.hbg{background:linear-gradient(160deg,var(--navy),var(--blue) 50%,#4A90C4);min-height:100vh}
-.rbg{background:linear-gradient(160deg,var(--navy),var(--blue));min-height:100vh}
-</style>
-<style>
-.dbtn{display:flex;align-items:center;gap:14px;padding:16px 20px;width:100%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15);border-radius:14px;color:#fff;transition:all .2s;margin-bottom:10px;text-align:left}
-.dbtn:hover{background:rgba(255,255,255,.22);transform:translateY(-2px)}
-.lbtn{display:flex;align-items:center;gap:14px;padding:18px 20px;width:100%;background:linear-gradient(135deg,rgba(212,160,23,.25),rgba(212,160,23,.1));border:1px solid rgba(212,160,23,.4);border-radius:14px;color:var(--gold);transition:all .2s;margin:8px 0 20px;text-align:left}
-.lbtn:hover{background:linear-gradient(135deg,rgba(212,160,23,.4),rgba(212,160,23,.2));transform:translateY(-2px)}
-.badge{border-radius:20px;padding:4px 12px;font-size:12px;font-weight:700;color:#fff;flex-shrink:0}
-.pbar{height:5px;background:var(--light);border-radius:3px;margin-bottom:24px}
-.pfill{height:5px;border-radius:3px;background:linear-gradient(90deg,var(--blue),var(--ok));transition:width .4s}
-.tag{border-radius:20px;padding:4px 14px;font-size:12px;font-weight:600;color:#fff;display:inline-block;margin-right:6px;margin-bottom:12px}
+:root{--navy:#1B2A4A;--blue:#2E5F8A;--steel:#6B7B8D;--light:#E8ECF0;--txt:#1A1A2E;--green:#0A8754;--white:#FFF}
+body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(160deg,var(--navy) 0%,var(--blue) 50%,#4A90C4 100%);min-height:100vh;color:var(--txt)}
+.ctn{max-width:540px;margin:0 auto;padding:40px 16px}
 </style>
 </head>
 <body>
-<div id="app"></div>
-<script>
-var Q=[
-{d:"Automatismes",t:"Fractions",q:"Calculer : 3/4 + 2/3",c:["17/12","5/7","5/12","6/12"],a:0,e:"3/4 + 2/3 = 9/12 + 8/12 = 17/12",v:1},
-{d:"Automatismes",t:"Fractions",q:"Simplifier 36/48",c:["3/4","6/8","9/12","2/3"],a:0,e:"PGCD(36,48)=12 → 3/4",v:1},
-{d:"Automatismes",t:"Puissances",q:"Calculer : 10⁻³ × 10⁵",c:["10²","10⁻¹⁵","10⁸","10⁻²"],a:0,e:"10⁻³ × 10⁵ = 10² (on additionne les exposants)",v:1},
-{d:"Automatismes",t:"Écriture scientifique",q:"0,00047 en écriture scientifique",c:["4,7 × 10⁻⁴","47 × 10⁻⁵","0,47 × 10⁻³","4,7 × 10⁴"],a:0,e:"0,00047 = 4,7 × 10⁻⁴",v:1},
-{d:"Automatismes",t:"Calcul mental",q:"(−3)² + 4 × (−2) = ?",c:["1","−1","17","−17"],a:0,e:"9 + (−8) = 1",v:1},
-{d:"Automatismes",t:"Priorités",q:"5 + 3 × 2 − 4 = ?",c:["7","12","8","6"],a:0,e:"× prioritaire : 5+6−4 = 7",v:1},
-{d:"Automatismes",t:"Pourcentages",q:"80 € + 15% = ?",c:["92 €","95 €","88 €","68 €"],a:0,e:"80 × 1,15 = 92 €",v:1},
-{d:"Automatismes",t:"PGCD",q:"PGCD de 84 et 36 ?",c:["12","6","4","18"],a:0,e:"84=2²×3×7, 36=2²×3² → PGCD=12",v:2},
-{d:"Algèbre",t:"Développement",q:"(2x+3)(x−4) = ?",c:["2x²−5x−12","2x²+5x−12","2x²−5x+12","2x²−8x−12"],a:0,e:"2x²−8x+3x−12 = 2x²−5x−12",v:2},
-{d:"Algèbre",t:"Factorisation",q:"Factoriser x²−9",c:["(x−3)(x+3)","(x−3)²","(x+3)²","x(x−9)"],a:0,e:"a²−b² = (a−b)(a+b)",v:2},
-{d:"Algèbre",t:"Équations",q:"3x−7 = 2x+5 → x = ?",c:["12","−12","2","−2"],a:0,e:"x = 5+7 = 12",v:1},
-{d:"Algèbre",t:"Inéquations",q:"2x+1 > 7 → ?",c:["x > 3","x > 4","x < 3","x > 6"],a:0,e:"2x > 6 → x > 3",v:2},
-{d:"Algèbre",t:"Identités",q:"(3x+2)² = ?",c:["9x²+12x+4","9x²+4","9x²+6x+4","3x²+12x+4"],a:0,e:"a²+2ab+b² → 9x²+12x+4",v:2},
-{d:"Algèbre",t:"Systèmes",q:"x+y=10, x−y=4 → x = ?",c:["7","3","6","8"],a:0,e:"2x=14 → x=7",v:3},
-{d:"Fonctions",t:"Vocabulaire",q:"f(x)=4x−1. f(3)=11 représente ?",c:["L'image de 3","L'antécédent de 3","Le coeff. directeur","L'ordonnée à l'origine"],a:0,e:"f(3)=11 : image de 3 par f",v:1},
-{d:"Fonctions",t:"Vocabulaire",q:"f(5)=8 → 5 est :",c:["Antécédent de 8","Image de 8","Coeff. directeur","Ordonnée à l'origine"],a:0,e:"5 est antécédent de 8, 8 est image de 5",v:1},
-{d:"Fonctions",t:"Vocabulaire",q:"2 images pour un même nombre ?",c:["Non, jamais","Oui, toujours","Si affine","Si linéaire"],a:0,e:"Une fonction donne une unique image",v:1},
-{d:"Fonctions",t:"Linéaire",q:"f(x)=3x. f(−2) = ?",c:["−6","6","−5","1"],a:0,e:"3×(−2) = −6",v:1},
-{d:"Fonctions",t:"Linéaire",q:"f(x)=ax passe toujours par :",c:["L'origine O(0;0)","(1;1)","L'axe des y","Aucun point fixe"],a:0,e:"f(0)=a×0=0 → passe par O",v:1},
-{d:"Fonctions",t:"Linéaire",q:"3m tissu = 18€. Fonction prix ?",c:["f(x)=6x","f(x)=3x","f(x)=18x","f(x)=6x+18"],a:0,e:"18/3=6€/m → f(x)=6x",v:1},
-{d:"Fonctions",t:"Affine",q:"f(x)=2x+5. Antécédent de 11 ?",c:["3","27","6","8"],a:0,e:"2x+5=11 → x=3",v:2},
-{d:"Fonctions",t:"Affine",q:"f(x)=−3x+7. Le 7 représente ?",c:["Ordonnée à l'origine","Coeff. directeur","Image de 7","La pente"],a:0,e:"b = f(0) = 7",v:1},
-{d:"Fonctions",t:"Affine",q:"f(x)=−2x+10. f(x)=0 → x = ?",c:["5","−5","10","−10"],a:0,e:"−2x+10=0 → x=5",v:2},
-{d:"Fonctions",t:"Affine",q:"Plombier: 30€ + 45€/h. Coût ?",c:["f(h)=45h+30","f(h)=30h+45","f(h)=75h","f(h)=45h"],a:0,e:"Part fixe 30 + variable 45h",v:1},
-{d:"Fonctions",t:"Affine",q:"f(0)=−2, f(4)=6. Expression ?",c:["f(x)=2x−2","f(x)=−2x+6","f(x)=2x+2","f(x)=4x−2"],a:0,e:"b=−2, a=8/4=2 → f(x)=2x−2",v:2},
-{d:"Fonctions",t:"Coeff. directeur",q:"Droite par (0;3) et (2;7). a = ?",c:["2","3","4","7"],a:0,e:"a=(7−3)/(2−0)=2",v:2},
-{d:"Fonctions",t:"Coeff. directeur",q:"a négatif → fonction :",c:["Décroissante","Croissante","Constante","Impossible à dire"],a:0,e:"a<0 → décroissante",v:1},
-{d:"Fonctions",t:"Graphique",q:"Droite coupe y en 4, x en −2. f(x) = ?",c:["2x+4","−2x+4","4x−2","−2x−4"],a:0,e:"b=4, a=(0−4)/(−2−0)=2",v:2},
-{d:"Fonctions",t:"Graphique",q:"Point (3;−1) sur la courbe →",c:["f(3)=−1","f(−1)=3","3 est image de −1","Antécédent de 3 = −1"],a:0,e:"(3;−1) → f(3)=−1",v:1},
-{d:"Fonctions",t:"Tableau",q:"f(x)=−x+6. f(0), f(3), f(6) ?",c:["6 ; 3 ; 0","0 ; 3 ; 6","6 ; 6 ; 6","−6 ; −3 ; 0"],a:0,e:"f(0)=6, f(3)=3, f(6)=0",v:1},
-{d:"Fonctions",t:"Tableau",q:"1→3, 2→5, 3→7, 4→9. Fonction ?",c:["f(x)=2x+1","f(x)=x+2","f(x)=3x","f(x)=2x−1"],a:0,e:"f(1)=3 ✓ → f(x)=2x+1",v:2},
-{d:"Fonctions",t:"Proportionnalité",q:"3kg mangues = 7,50€. 5kg = ?",c:["12,50€","11,25€","10€","15€"],a:0,e:"2,50€/kg × 5 = 12,50€",v:1},
-{d:"Fonctions",t:"Proportionnalité",q:"x:2,5,8 → y:6,15,24. Proportionnel ?",c:["Oui, coeff 3","Non","Impossible","Oui, coeff 2"],a:0,e:"6/2=15/5=24/8=3",v:1},
-{d:"Fonctions",t:"Variation",q:"f(x)=5x−3 est :",c:["Croissante","Décroissante","Ni l'un ni l'autre","Constante"],a:0,e:"a=5>0 → croissante",v:1},
-{d:"Fonctions",t:"Variation",q:"f(2)=10, f(5)=4. Sur [2;5] :",c:["Décroissante","Croissante","Constante","Impossible"],a:0,e:"x↑, f(x)↓ → décroissante",v:1},
-{d:"Fonctions",t:"Modélisation",q:"Réservoir 200L, −15L/min. V(t) ?",c:["−15t+200","15t+200","200t−15","−200t+15"],a:0,e:"Diminue de 15/min, départ 200",v:2},
-{d:"Fonctions",t:"Modélisation",q:"V(t)=−15t+200. Vide quand ?",c:["≈13,3 min","15 min","200 min","10 min"],a:0,e:"t=200/15≈13,3 min",v:2},
-{d:"Fonctions",t:"Comparaison",q:"A:20€+0,05€/min. B:0,15€/min. A mieux à ?",c:["200 min","100 min","400 min","Jamais"],a:0,e:"20+0,05x<0,15x → x>200",v:3},
-{d:"Géométrie",t:"Pythagore",q:"Côtés 6 et 8. Hypoténuse ?",c:["10 cm","14 cm","√100 cm","12 cm"],a:0,e:"36+64=100 → c=10",v:1},
-{d:"Géométrie",t:"Pythagore",q:"Côtés 5,12,13. Rectangle ?",c:["Oui","Non","Impossible","Si isocèle"],a:0,e:"25+144=169=13² → oui",v:2},
-{d:"Géométrie",t:"Thalès",q:"AM/AB=3/5, AN=6. AC ?",c:["10","9","15","8"],a:0,e:"3/5=6/AC → AC=10",v:2},
-{d:"Géométrie",t:"Trigo",q:"Angle 30°, hyp=10. Opposé ?",c:["5","8,66","7,07","10"],a:0,e:"sin30°=0,5 → 10×0,5=5",v:2},
-{d:"Géométrie",t:"Volumes",q:"Cône r=3, h=7. Volume ?",c:["66 cm³","198 cm³","63 cm³","44 cm³"],a:0,e:"V=(1/3)πr²h≈66",v:2},
-{d:"Géométrie",t:"Aires",q:"Disque rayon 5. Aire ?",c:["78,5 cm²","31,4 cm²","157,1 cm²","25 cm²"],a:0,e:"π×25≈78,5",v:1},
-{d:"Géométrie",t:"Transformations",q:"A(2;3)→A'(−2;−3). Transfo ?",c:["Symétrie centrale/O","Translation","Rotation 90°","Homothétie k=2"],a:0,e:"Coordonnées opposées → symétrie/O",v:2},
-{d:"Géométrie",t:"Homothétie",q:"Rapport 2, segment 4cm. Image ?",c:["8 cm","2 cm","6 cm","16 cm"],a:0,e:"4×2=8",v:2},
-{d:"Géométrie",t:"Angles",q:"Angles 55° et 70°. Le 3ème ?",c:["55°","65°","45°","35°"],a:0,e:"180−55−70=55°",v:1},
-{d:"Probabilités",t:"Proba simple",q:"Dé : P(pair) ?",c:["1/2","1/3","2/3","1/6"],a:0,e:"{2,4,6} → 3/6=1/2",v:1},
-{d:"Probabilités",t:"Proba",q:"3 rouges, 7 bleues. P(rouge) ?",c:["3/10","7/10","1/3","3/7"],a:0,e:"3/(3+7)=3/10",v:1},
-{d:"Probabilités",t:"Moyenne",q:"Notes: 12,15,9,14,10. Moyenne ?",c:["12","11","13","10"],a:0,e:"60/5=12",v:1},
-{d:"Probabilités",t:"Médiane",q:"3,5,7,9,11,13,15. Médiane ?",c:["9","7","11","8"],a:0,e:"4ème valeur=9",v:1},
-{d:"Probabilités",t:"Étendue",q:"4,12,7,3,18,9. Étendue ?",c:["15","14","18","9"],a:0,e:"18−3=15",v:1},
-{d:"Probabilités",t:"Arbre",q:"Pièce 2×. P(pile,pile) ?",c:["1/4","1/2","1/3","1/8"],a:0,e:"½×½=¼",v:2},
-{d:"Algorithmique",t:"Boucle",q:"5× : avancer 10, tourner 72°",c:["Pentagone","Hexagone","Triangle","Carré"],a:0,e:"360/5=72° → pentagone",v:2},
-{d:"Algorithmique",t:"Variable",q:"N=1. 4× : N←N×2. N ?",c:["16","8","32","4"],a:0,e:"1→2→4→8→16",v:2},
-{d:"Algorithmique",t:"Condition",q:"Si x>0 «positif» sinon «négatif». x=−3 ?",c:["négatif ou nul","positif","erreur","rien"],a:0,e:"−3>0 faux → négatif ou nul",v:1},
-{d:"Algorithmique",t:"Algorithme",q:"n=100. Tant que n>1: n←n÷2. Itérations ?",c:["7","6","50","10"],a:0,e:"100→50→25→12.5→6.25→3.125→1.56→0.78 = 7",v:3}
-];
-var DOMS=["Tous","Automatismes","Algèbre","Fonctions","Géométrie","Probabilités","Algorithmique"];
-var IC={Automatismes:"⚡","Algèbre":"𝑥",Fonctions:"📈","Géométrie":"📐","Probabilités":"🎲",Algorithmique:"🤖"};
-var DL={1:"Facile",2:"Moyen",3:"Difficile"},DC={1:"var(--green)",2:"var(--warn)",3:"var(--alert)"};
-var S={scr:"home",dom:"Tous",qs:[],cur:0,sel:null,expl:false,sc:0,ans:[],stats:{},lp:0};
-function shuf(a){a=[...a];for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-function go(d){var p=d==="Tous"?Q:Q.filter(function(q){return q.d===d});S.qs=shuf(p).slice(0,Math.min(10,p.length));S.cur=0;S.sel=null;S.expl=false;S.sc=0;S.ans=[];S.dom=d;S.scr="quiz";R()}
-function ans(i){if(S.sel!==null)return;S.sel=i;var q=S.qs[S.cur],ok=i===q.a;if(ok)S.sc++;S.ans.push({q:q,s:i,ok:ok});S.expl=true;if(!S.stats[q.d])S.stats[q.d]={t:0,c:0};S.stats[q.d].t++;if(ok)S.stats[q.d].c++;R()}
-function nxt(){if(S.cur+1>=S.qs.length)S.scr="results";else{S.cur++;S.sel=null;S.expl=false}R()}
-function hm(){S.scr="home";R()}
-function gl(){S.lp=0;S.scr="learn";R()}
-function R(){var a=document.getElementById("app");if(S.scr==="home")a.innerHTML=rHome();else if(S.scr==="quiz")a.innerHTML=rQuiz();else if(S.scr==="results")a.innerHTML=rRes();else if(S.scr==="learn")a.innerHTML=rLearn()}
+<div class="ctn">
+  <div style="text-align:center;margin-bottom:40px">
+    <div style="font-size:56px;margin-bottom:12px">🎓</div>
+    <h1 style="color:#fff;font-size:28px;font-weight:700;letter-spacing:-.5px">Révisions DNB 2026</h1>
+    <p style="color:rgba(255,255,255,.7);font-size:14px;margin-top:8px">Choisis ta matière et entraîne-toi</p>
+  </div>
+  <a href="maths.html" style="display:flex;align-items:center;gap:16px;padding:20px 24px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:16px;color:#fff;text-decoration:none;transition:all .2s;margin-bottom:14px"
+     onmouseover="this.style.background='rgba(255,255,255,.25)';this.style.transform='translateY(-3px)'"
+     onmouseout="this.style.background='rgba(255,255,255,.14)';this.style.transform='none'">
+    <span style="font-size:36px;width:48px;text-align:center">📐</span>
+    <div style="flex:1">
+      <div style="font-weight:700;font-size:18px">Mathématiques</div>
+      <div style="color:rgba(255,255,255,.6);font-size:13px;margin-top:4px">60 exercices + leçons fonctions</div>
+    </div>
+    <span style="font-size:13px;background:var(--green);padding:4px 12px;border-radius:20px;font-weight:600">En ligne ✓</span>
+  </a>
 
-function rHome(){var st="",sk=Object.keys(S.stats);if(sk.length){st='<div style="margin-top:24px;background:rgba(255,255,255,.08);border-radius:14px;padding:20px;border:1px solid rgba(255,255,255,.1)"><h3 style="color:#fff;font-size:14px;font-weight:600;margin-bottom:12px">📊 Progression</h3>';sk.forEach(function(d){var s=S.stats[d],p=Math.round(s.c/s.t*100),cl=p>=70?"var(--green)":p>=40?"var(--warn)":"var(--alert)";st+='<div style="margin-bottom:8px"><div style="display:flex;justify-content:space-between;color:rgba(255,255,255,.7);font-size:12px;margin-bottom:4px"><span>'+(IC[d]||"")+" "+d+"</span><span>"+s.c+"/"+s.t+'</span></div><div style="height:6px;background:rgba(255,255,255,.1);border-radius:3px"><div style="height:6px;border-radius:3px;width:'+p+"%;background:"+cl+'"></div></div></div>'});st+="</div>"}
-var b="";DOMS.forEach(function(d){var ic=d==="Tous"?"🎯":IC[d],n=d==="Tous"?Q.length:Q.filter(function(q){return q.d===d}).length;var s=d==="Tous"?Object.values(S.stats).reduce(function(a,x){return{t:a.t+x.t,c:a.c+x.c}},{t:0,c:0}):S.stats[d];var p=s&&s.t?Math.round(s.c/s.t*100):null;var bg=p!==null?'<div class="badge" style="background:'+(p>=70?"var(--green)":p>=40?"var(--warn)":"var(--alert)")+'">'+p+"%</div>":"";b+='<button class="dbtn" onclick="go(\''+d+'\')"><span style="font-size:26px;width:36px;text-align:center">'+ic+'</span><div style="flex:1"><div style="font-weight:600;font-size:15px">'+(d==="Tous"?"Tout le programme":d)+'</div><div style="color:rgba(255,255,255,.55);font-size:12px;margin-top:2px">'+n+" questions</div></div>"+bg+"</button>"});
-return'<div class="hbg"><div class="ctn"><div style="text-align:center;padding-top:40px;margin-bottom:36px"><div style="font-size:48px;margin-bottom:8px">📝</div><h1 style="color:#fff;font-size:26px;font-weight:700">Révisions Maths DNB 2026</h1><p style="color:rgba(255,255,255,.7);font-size:13px;margin-top:6px">Programme complet — Entraîne-toi par domaine</p></div>'+b+'<button class="lbtn" onclick="gl()"><span style="font-size:26px;width:36px;text-align:center">💡</span><div style="flex:1"><div style="font-weight:700;font-size:16px">Comprendre les fonctions</div><div style="color:rgba(255,255,255,.6);font-size:12px;margin-top:2px">À quoi ça sert ? Exemples concrets</div></div><span style="font-size:20px">→</span></button>'+st+"</div></div>"}
-function rQuiz(){var q=S.qs[S.cur],pr=((S.cur+(S.sel!==null?1:0))/S.qs.length)*100,ch="",lt="ABCD";
-q.c.forEach(function(c,i){var bg="#fff",bd="var(--light)",tx="var(--txt)",ic=lt[i],op="1",cl="";if(S.sel!==null){cl=" answered";if(i===q.a){bg="#E6F4EA";bd="var(--green)";tx="var(--green)";ic="✓"}else if(i===S.sel&&!S.ans[S.ans.length-1].ok){bg="#FDE8E8";bd="var(--alert)";tx="var(--alert)";ic="✗"}else{bg="#f5f5f5";tx="var(--steel)";op=".5"}}
-ch+='<button class="choice-btn'+cl+'" onclick="ans('+i+')" '+(S.sel!==null?"disabled":"")+" "+'style="background:'+bg+";border-color:"+bd+";opacity:"+op+'"><span class="ci" style="'+(S.sel!==null&&(i===q.a||i===S.sel)?"background:"+(i===q.a?"var(--green)":"var(--alert)")+";color:#fff":"")+'">'+ic+'</span><span class="ct" style="color:'+tx+'">'+c+"</span></button>"});
-var ex="";if(S.expl){var ok=S.ans[S.ans.length-1].ok;ex='<div class="fade" style="border-radius:12px;padding:18px;margin-bottom:20px;background:'+(ok?"#E6F4EA":"#FFF3E0")+";border:1px solid "+(ok?"var(--green)":"var(--warn)")+'"><div style="font-weight:700;font-size:14px;color:'+(ok?"var(--green)":"var(--warn)")+';margin-bottom:6px">'+(ok?"✓ Bonne réponse !":"✗ Pas tout à fait…")+'</div><p style="font-size:14px;line-height:1.5">'+q.e+"</p></div>"}
-var nb="";if(S.sel!==null){nb='<button class="next-btn" onclick="nxt()">'+(S.cur+1>=S.qs.length?"Voir les résultats →":"Question suivante →")+"</button>"}
-return'<div style="min-height:100vh;background:var(--bg)"><div class="ctn"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px"><button onclick="hm()" style="background:none;border:none;color:var(--steel);font-size:14px">← Retour</button><span style="color:var(--navy);font-weight:700;font-size:14px">'+(S.cur+1)+"/"+S.qs.length+'</span><span style="color:var(--ok);font-weight:700;font-size:14px">✓ '+S.sc+'</span></div><div class="pbar"><div class="pfill" style="width:'+pr+'%"></div></div><div><span class="tag" style="background:var(--navy)">'+(IC[q.d]||"")+" "+q.d+'</span><span class="tag" style="background:'+DC[q.v]+'">'+DL[q.v]+'</span><span class="tag" style="background:var(--light);color:var(--steel)">'+q.t+'</span></div><div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 2px 16px rgba(27,42,74,.08);margin-bottom:20px;border:1px solid var(--light)"><p style="font-size:17px;font-weight:600;line-height:1.5">'+q.q+"</p></div>"+ch+ex+nb+"</div></div>"}
-function rRes(){var p=Math.round(S.sc/S.qs.length*100),em=p>=80?"🏆":p>=60?"👏":p>=40?"💪":"📚",mg=p>=80?"Excellent !":p>=60?"Bien joué !":p>=40?"Encore un effort !":"Reprends les bases !";
-var mn=p>=88?"Mention Très Bien":p>=72?"Mention Bien":p>=56?"Mention AB":p>=50?"Admis(e)":"À retravailler",mc=p>=50?"var(--green)":"var(--alert)";
-var rc="";S.ans.forEach(function(a){var c=a.ok?"var(--green)":"var(--alert)",x=a.ok?"":'<div style="color:var(--warn);font-size:12px;margin-top:4px">Réponse : '+a.q.c[a.q.a]+"</div>";rc+='<div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08)"><span style="width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;background:'+c+';color:#fff;font-size:12px;font-weight:700;flex-shrink:0;margin-top:2px">'+(a.ok?"✓":"✗")+'</span><div><div style="color:#fff;font-size:13px;font-weight:500;line-height:1.4">'+a.q.q+"</div>"+x+"</div></div>"});
-return'<div class="rbg"><div class="ctn"><div style="text-align:center;padding-top:40px;margin-bottom:32px"><div style="font-size:56px;margin-bottom:8px">'+em+'</div><h2 style="color:#fff;font-size:26px;font-weight:700">'+S.sc+"/"+S.qs.length+'</h2><div style="display:inline-block;border-radius:20px;padding:6px 18px;font-size:14px;font-weight:700;color:#fff;margin-top:8px;background:'+mc+'">'+mn+'</div><p style="color:rgba(255,255,255,.7);font-size:14px;margin-top:8px">'+mg+'</p></div><div style="background:rgba(255,255,255,.1);border-radius:16px;padding:16px;margin-bottom:24px;border:1px solid rgba(255,255,255,.1)"><h3 style="color:#fff;font-size:14px;font-weight:600;margin-bottom:12px">Récapitulatif</h3>'+rc+'</div><div style="display:flex;gap:12px"><button onclick="go(\''+S.dom+'\')" style="flex:1;padding:14px 0;border-radius:12px;font-size:15px;font-weight:700;border:none;background:#fff;color:var(--navy)">🔄 Recommencer</button><button onclick="hm()" style="flex:1;padding:14px 0;border-radius:12px;font-size:15px;font-weight:700;border:none;background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3)">🏠 Accueil</button></div></div></div>'}
-var LS=[
-{ti:"C'est quoi une fonction ?",ic:"🤔",su:"La machine à transformer",h:'<p class="lp">Imagine une <b>machine</b> : tu mets un nombre dedans, elle te donne un résultat. C\'est ça, une fonction.</p><div class="machine-box" style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;background:var(--light);border-radius:12px;padding:16px;margin-bottom:16px"><div style="background:var(--ok);color:#fff;border-radius:8px;padding:8px 14px;font-size:14px;font-weight:600">Tu mets : <b>3</b></div><div style="color:var(--navy);font-size:13px;font-weight:600">→ f(x) = 2x+1 →</div><div style="background:var(--green);color:#fff;border-radius:8px;padding:8px 14px;font-size:14px;font-weight:600">Tu obtiens : <b>7</b></div></div><p class="lp">Le <b>3</b> = l\'<span class="hl">entrée</span> (antécédent).<br>Le <b>7</b> = la <span class="hl">sortie</span> (image).</p><p class="lp">Règle : <b>pour chaque entrée, une seule sortie</b>.</p><div class="key-box"><b>📌 Vocabulaire :</b><br>• f(3)=7 → « l\'image de 3 par f est 7 »<br>• 3 est un antécédent de 7<br>• f est le nom de la fonction</div>'},
-{ti:"À quoi ça sert ?",ic:"🌍",su:"Les fonctions sont partout",h:'<p class="lp">Elles décrivent <b>comment une chose dépend d\'une autre</b>.</p><div class="ex-box"><div class="ex-title">📱 Forfait téléphone</div><p class="ex-p">10€/mois + 0,05€/SMS.</p><div class="formula-box">f(x) = 0,05x + 10</div><p class="ex-p">200 SMS → f(200) = 0,05×200+10 = <b>20€</b></p></div><div class="ex-box"><div class="ex-title">🚗 Distance</div><p class="ex-p">Voiture à 60 km/h, route Mamoudzou–Sada.</p><div class="formula-box">d(t) = 60t</div><p class="ex-p">0,5h → <b>30 km</b></p></div><div class="ex-box"><div class="ex-title">🏊 Piscine</div><p class="ex-p">5000L, remplissage 250L/h.</p><div class="formula-box">V(t) = 250t</div><p class="ex-p">Pleine quand ? 250t=5000 → <b>20h</b></p></div><div class="key-box"><b>💡</b> Une fonction = un outil pour <b>prévoir</b> et <b>calculer</b>.</div>'},
-{ti:"Linéaire vs Affine",ic:"⚖️",su:"Les deux types du brevet",h:'<p class="lp">Deux types principaux :</p><div style="display:flex;gap:10px;margin-bottom:20px"><div style="flex:1;border:2px solid var(--ok);border-radius:12px;padding:14px"><div style="color:var(--ok);font-weight:700;font-size:15px;margin-bottom:8px">Linéaire</div><div class="formula-box">f(x) = ax</div><p class="ex-p">• Passe par O(0;0)<br>• = proportionnalité<br>• Ex: prix au kilo</p><div style="background:#E6F4FF;border-radius:8px;padding:10px;font-size:13px;margin-top:8px">3 mangues → 6€<br><b>f(x) = 2x</b></div></div><div style="flex:1;border:2px solid var(--warn);border-radius:12px;padding:14px"><div style="color:var(--warn);font-weight:700;font-size:15px;margin-bottom:8px">Affine</div><div class="formula-box">f(x) = ax + b</div><p class="ex-p">• Ne passe PAS par O<br>• Part fixe + variable<br>• Ex: taxi</p><div style="background:#FFF8E6;border-radius:8px;padding:10px;font-size:13px;margin-top:8px">3€ base + 1,20€/km<br><b>f(x) = 1,2x+3</b></div></div></div><div class="key-box"><b>🔑</b> b=0 → linéaire | b≠0 → affine<br><b>a</b> = pente | <b>b</b> = ordonnée à l\'origine</div>'},
-{ti:"Lire un graphique",ic:"📊",su:"Le graphique raconte une histoire",h:'<p class="lp">Un graphique = une <b>photo de la relation</b> entre 2 grandeurs.</p><div class="ex-box"><div class="ex-title">🔍 Trouver une image</div><p class="ex-p">f(3) : pars de x=3, monte à la courbe, lis y.</p><div style="padding:10px;background:var(--light);border-radius:8px;font-family:monospace;font-size:14px;text-align:center;margin-bottom:12px">x=3 → ↑ courbe → y=? → f(3)</div></div><div class="ex-box"><div class="ex-title">🔍 Trouver un antécédent</div><p class="ex-p">f(x)=5 : pars de y=5, va → à la courbe, lis x.</p><div style="padding:10px;background:var(--light);border-radius:8px;font-family:monospace;font-size:14px;text-align:center;margin-bottom:12px">y=5 → → courbe → x=?</div></div><div class="ex-box"><div class="ex-title">📈 Croissante / Décroissante</div><p class="ex-p">Monte → <span style="color:var(--green);font-weight:700">croissante</span><br>Descend → <span style="color:var(--alert);font-weight:700">décroissante</span></p></div><div class="key-box"><b>⚠️ Piège brevet :</b> « antécédent de 4 » ≠ f(4) ! C\'est le x tel que f(x)=4. Pars de l\'axe <b>vertical</b>.</div>'},
-{ti:"Le coefficient directeur",ic:"📐",su:"La pente = vitesse du changement",h:'<p class="lp">Le coeff. <b>a</b> mesure la vitesse de changement = la <b>pente</b>.</p><div style="display:flex;gap:10px;margin-bottom:20px"><div style="flex:1;background:#E6F4EA;border-radius:12px;padding:14px;text-align:center"><div style="font-size:32px">↗️</div><div style="font-weight:700;color:var(--green)">a &gt; 0</div><div style="font-size:12px;margin-top:4px">Monte<br>Croissante</div></div><div style="flex:1;background:#FDE8E8;border-radius:12px;padding:14px;text-align:center"><div style="font-size:32px">↘️</div><div style="font-weight:700;color:var(--alert)">a &lt; 0</div><div style="font-size:12px;margin-top:4px">Descend<br>Décroissante</div></div><div style="flex:1;background:var(--light);border-radius:12px;padding:14px;text-align:center"><div style="font-size:32px">➡️</div><div style="font-weight:700;color:var(--steel)">a = 0</div><div style="font-size:12px;margin-top:4px">Horizontal<br>Constante</div></div></div><div class="ex-box"><div class="ex-title">🧮 Calcul</div><div class="formula-box">a = (y₂−y₁) / (x₂−x₁)</div><p class="ex-p">A(1;3), B(4;9) → a = 6/3 = <b>2</b><br>= quand x↑1, y↑2</p></div><div class="ex-box"><div class="ex-title">🌊 Concret</div><p class="ex-p">Réservoir −15L/min → a = <b>−15</b><br>Le − = ça diminue. Le 15 = 15L/min.</p></div><div class="key-box"><b>💡</b> C\'est la pente d\'une route. Plus |a| est grand, plus c\'est raide. Le signe = monte (+) ou descend (−).</div>'},
-{ti:"Résoudre un problème",ic:"🎯",su:"La méthode pas à pas",h:'<p class="lp">Au brevet : situation concrète → modéliser.</p><div style="background:#fff;border-radius:12px;padding:16px;border:2px solid var(--blue);margin-bottom:20px"><div style="display:flex;flex-direction:column;gap:14px"><div style="display:flex;gap:12px;align-items:flex-start"><span style="width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">1</span><div><div style="font-weight:700;font-size:14px;color:var(--navy)">Identifier les grandeurs</div><div style="font-size:13px;color:var(--steel)">Variable x ? Résultat f(x) ?</div></div></div><div style="display:flex;gap:12px;align-items:flex-start"><span style="width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">2</span><div><div style="font-weight:700;font-size:14px;color:var(--navy)">Trouver la relation</div><div style="font-size:13px;color:var(--steel)">Part fixe ? Variable ? Proportionnel ?</div></div></div><div style="display:flex;gap:12px;align-items:flex-start"><span style="width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">3</span><div><div style="font-weight:700;font-size:14px;color:var(--navy)">Écrire f(x) = ax + b</div><div style="font-size:13px;color:var(--steel)">Calculer a et b.</div></div></div><div style="display:flex;gap:12px;align-items:flex-start"><span style="width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">4</span><div><div style="font-weight:700;font-size:14px;color:var(--navy)">Répondre</div><div style="font-size:13px;color:var(--steel)">Image → remplacer x. Antécédent → résoudre.</div></div></div></div></div><div class="ex-box"><div class="ex-title">✍️ Exercice type</div><p class="ex-p">Taxi Mamoudzou : 2€ + 0,80€/km.</p><p class="ex-p"><b>1.</b> x=km, f(x)=prix<br><b>2.</b> Fixe=2, variable=0,80/km<br><b>3.</b> f(x)=0,8x+2<br><b>4.</b> 15km → f(15)=0,8×15+2=<b>14€</b><br>Budget 10€ → 0,8x+2=10 → x=<b>10km</b></p></div><div class="key-box"><b>🏁 Tu es prête !</b> Entraîne-toi sur les exercices Fonctions !</div>'}
-];
-function rLearn(){var l=LS[S.lp],dots="";LS.forEach(function(_,i){var w=i===S.lp?24:10,bg=i===S.lp?"var(--navy)":i<S.lp?"var(--ok)":"var(--light)";dots+='<button onclick="S.lp='+i+';R()" style="height:10px;width:'+w+"px;border-radius:5px;border:none;cursor:pointer;background:"+bg+';transition:all .3s"></button>'});
-var nav="";if(S.lp>0)nav+='<button onclick="S.lp--;R()" style="flex:1;padding:14px 0;border-radius:12px;font-size:15px;font-weight:700;background:#fff;color:var(--navy);border:2px solid var(--light)">← Précédent</button>';
-if(S.lp<LS.length-1)nav+='<button onclick="S.lp++;R()" style="flex:1;padding:14px 0;border-radius:12px;font-size:15px;font-weight:700;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border:none">Suivant →</button>';
-else nav+='<button onclick="go(\'Fonctions\')" style="flex:1;padding:14px 0;border-radius:12px;font-size:15px;font-weight:700;background:linear-gradient(135deg,var(--green),#0DB060);color:#fff;border:none">🎯 S\'entraîner →</button>';
-return'<div style="min-height:100vh;background:var(--bg)"><div class="ctn"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px"><button onclick="hm()" style="background:none;border:none;color:var(--steel);font-size:14px;cursor:pointer">← Accueil</button><span style="color:var(--navy);font-weight:700;font-size:13px">'+(S.lp+1)+"/"+LS.length+'</span></div><div style="display:flex;gap:6px;justify-content:center;margin-bottom:24px">'+dots+'</div><div style="background:#fff;border-radius:20px;padding:28px 22px;box-shadow:0 4px 24px rgba(27,42,74,.08);border:1px solid var(--light);margin-bottom:20px"><div style="text-align:center;margin-bottom:20px"><div style="font-size:44px;margin-bottom:8px">'+l.ic+'</div><h2 style="color:var(--navy);font-size:22px;font-weight:700">'+l.ti+'</h2><p style="color:var(--steel);font-size:13px;margin-top:6px">'+l.su+"</p></div>"+l.h+'</div><div style="display:flex;gap:12px">'+nav+"</div></div></div>"}
+  <div style="display:flex;align-items:center;gap:16px;padding:20px 24px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:16px;color:rgba(255,255,255,.4);margin-bottom:14px;cursor:default">
+    <span style="font-size:36px;width:48px;text-align:center;filter:grayscale(1) opacity(.5)">📖</span>
+    <div style="flex:1">
+      <div style="font-weight:700;font-size:18px">Français</div>
+      <div style="font-size:13px;margin-top:4px">Grammaire, conjugaison, orthographe</div>
+    </div>
+    <span style="font-size:12px;background:rgba(255,255,255,.1);padding:4px 12px;border-radius:20px">Bientôt</span>
+  </div>
 
-R();
-</script>
+  <div style="display:flex;align-items:center;gap:16px;padding:20px 24px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:16px;color:rgba(255,255,255,.4);margin-bottom:14px;cursor:default">
+    <span style="font-size:36px;width:48px;text-align:center;filter:grayscale(1) opacity(.5)">🌍</span>
+    <div style="flex:1">
+      <div style="font-weight:700;font-size:18px">Histoire-Géographie</div>
+      <div style="font-size:13px;margin-top:4px">Repères, documents, EMC</div>
+    </div>
+    <span style="font-size:12px;background:rgba(255,255,255,.1);padding:4px 12px;border-radius:20px">Bientôt</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:16px;padding:20px 24px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:16px;color:rgba(255,255,255,.4);margin-bottom:14px;cursor:default">
+    <span style="font-size:36px;width:48px;text-align:center;filter:grayscale(1) opacity(.5)">🔬</span>
+    <div style="flex:1">
+      <div style="font-weight:700;font-size:18px">Sciences</div>
+      <div style="font-size:13px;margin-top:4px">Physique-Chimie, SVT, Technologie</div>
+    </div>
+    <span style="font-size:12px;background:rgba(255,255,255,.1);padding:4px 12px;border-radius:20px">Bientôt</span>
+  </div>
+
+  <div style="text-align:center;margin-top:32px;color:rgba(255,255,255,.35);font-size:12px">
+    Révisions DNB 2026 — Programme cycle 4<br>
+    Conçu avec ❤️ à Mayotte
+  </div>
+</div>
 </body>
 </html>
